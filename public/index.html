@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Survival Squad</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="menu" class="screen">
+    <div class="card">
+      <div class="eyebrow">REAL-TIME CO-OP</div>
+      <h1>Survival Squad</h1>
+      <p>Team up, survive 10 waves, level up, and defeat the bosses.</p>
+      <input id="name" maxlength="18" placeholder="Your player name">
+      <button id="play">ENTER THE ARENA</button>
+      <div class="controls">WASD / Arrow Keys to move · Space to attack · Buy upgrades between fights</div>
+    </div>
+  </div>
+
+  <div id="game" hidden>
+    <header>
+      <div class="brand">SURVIVAL <span>SQUAD</span></div>
+      <div id="waveText">Wave 0</div>
+      <div id="statusText">Connecting...</div>
+    </header>
+    <main>
+      <section class="hud">
+        <div class="panel">
+          <b id="playerName">Player</b>
+          <div class="bar"><i id="hpBar"></i></div>
+          <small id="hpText">100 / 100</small>
+          <div class="stats"><span>Lv <b id="level">1</b></span><span>XP <b id="xp">0</b></span><span>Coins <b id="coins">0</b></span></div>
+        </div>
+        <div class="panel upgrades">
+          <b>SHOP</b>
+          <button data-up="damage">+ Damage <small>30</small></button>
+          <button data-up="health">+ Max HP <small>35</small></button>
+          <button data-up="speed">+ Speed <small>40</small></button>
+          <button data-up="fireRate">+ Attack Speed <small>45</small></button>
+        </div>
+      </section>
+      <section class="arena-wrap">
+        <canvas id="canvas" width="900" height="900"></canvas>
+        <div id="message" class="message"></div>
+      </section>
+    </main>
+    <footer>
+      <span>WASD / Arrows · SPACE attack</span>
+      <span id="players">0 players</span>
+    </footer>
+  </div>
+  <script src="client.js"></script>
+</body>
+</html>
